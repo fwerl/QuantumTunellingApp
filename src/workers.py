@@ -2,7 +2,7 @@ from PyQt6.QtCore import QThread, pyqtSignal
 import os
 import cv2
 
-from visualization import Visualization
+from src.visualization import Visualization
 
 
 class SimulationWorker(QThread):

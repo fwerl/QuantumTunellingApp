@@ -1,10 +1,10 @@
 from __future__ import annotations
-from PyQt6.QtWidgets import (QApplication, QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout,
+from PyQt6.QtWidgets import (QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout,
                              QProgressBar, QGroupBox, QFormLayout)
 
-from numerics import NumericalCalculation
-from workers import SimulationWorker, ExportVideoWorker
-from visualization import Visualization
+from src.numerics import NumericalCalculation
+from src.workers import SimulationWorker, ExportVideoWorker
+from src.visualization import Visualization
 
 # author: Filip Werl
 
@@ -248,7 +248,7 @@ class QuantumTunnellingApp:
         self.video_worker.finished.connect(lambda: self.UI.set_progress_bar_color("green"))
         self.video_worker.start()
 
-if __name__ == "__main__":
-    app = QApplication([])
-    window = QuantumTunnellingApp()
-    app.exec()
+# if __name__ == "__main__":
+#     app = QApplication([])
+#     window = QuantumTunnellingApp()
+#     app.exec()

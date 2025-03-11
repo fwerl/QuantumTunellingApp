@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from numpy.fft import fft
 from scipy.constants import e
-from numerics import NumericalCalculation
+from src.numerics import NumericalCalculation
 
 class Visualization:
     IMAGE_PATH = 'images/'
