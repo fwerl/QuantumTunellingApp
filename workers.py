@@ -24,9 +24,10 @@ class SimulationWorker(QThread):
         Deletes all files from previous runs. Ensures the image folder exists.
         """
         image_folder = self.vis.image_folder
-        for file in os.listdir(image_folder[:-1]):
-            file_object_path = os.path.join(image_folder, file)
-            os.remove(file_object_path)
+        if os.path.exists(image_folder):
+            for file in os.listdir(image_folder[:-1]):
+                file_object_path = os.path.join(image_folder, file)
+                os.remove(file_object_path)
         os.makedirs(image_folder, exist_ok=True)
 
     def _emit_progress(self, i, t_steps) -> None:
